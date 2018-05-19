@@ -1,0 +1,83 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is Metro/2.3 (tags/2.3-7528; 2013-04-29T19:34:10+0000) JAXWS-RI/2.2.8 JAXWS/2.2 svn-revision#unknown. --><xs:schema xmlns:tns="http://services.exercise1.lab12.webprogramming.aa1718.unitn.it/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://services.exercise1.lab12.webprogramming.aa1718.unitn.it/">
+
+<xs:element name="getBounds" type="tns:getBounds"/>
+
+<xs:element name="getBoundsResponse" type="tns:getBoundsResponse"/>
+
+<xs:element name="getLatLng" type="tns:getLatLng"/>
+
+<xs:element name="getLatLngResponse" type="tns:getLatLngResponse"/>
+
+<xs:element name="getPublicURLMapNeighbors" type="tns:getPublicURLMapNeighbors"/>
+
+<xs:element name="getPublicURLMapNeighborsResponse" type="tns:getPublicURLMapNeighborsResponse"/>
+
+<xs:element name="getShopIdsInQuadrant" type="tns:getShopIdsInQuadrant"/>
+
+<xs:element name="getShopIdsInQuadrantResponse" type="tns:getShopIdsInQuadrantResponse"/>
+
+<xs:complexType name="getBounds">
+<xs:sequence>
+<xs:element name="centerLat" type="xs:double" minOccurs="0"/>
+<xs:element name="centerLng" type="xs:double" minOccurs="0"/>
+<xs:element name="distance" type="xs:double" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getBoundsResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:double" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getShopIdsInQuadrant">
+<xs:sequence>
+<xs:element name="topLat" type="xs:double" minOccurs="0"/>
+<xs:element name="topLng" type="xs:double" minOccurs="0"/>
+<xs:element name="bottomLat" type="xs:double" minOccurs="0"/>
+<xs:element name="bottomLng" type="xs:double" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getShopIdsInQuadrantResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:int" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getPublicURLMapNeighbors">
+<xs:sequence>
+<xs:element name="userId" type="xs:int" minOccurs="0"/>
+<xs:element name="shopIds" type="xs:int" minOccurs="0" maxOccurs="unbounded"/>
+<xs:element name="aggregationTypeId" type="xs:int" minOccurs="0"/>
+<xs:element name="mapTypeId" type="xs:int" minOccurs="0"/>
+<xs:element name="centerLat" type="xs:double" minOccurs="0"/>
+<xs:element name="centerLng" type="xs:double" minOccurs="0"/>
+<xs:element name="swLat" type="xs:double" minOccurs="0"/>
+<xs:element name="swLng" type="xs:double" minOccurs="0"/>
+<xs:element name="neLat" type="xs:double" minOccurs="0"/>
+<xs:element name="neLng" type="xs:double" minOccurs="0"/>
+<xs:element name="width" type="xs:int" minOccurs="0"/>
+<xs:element name="height" type="xs:int" minOccurs="0"/>
+<xs:element name="zoom" type="xs:int" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getPublicURLMapNeighborsResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getLatLng">
+<xs:sequence>
+<xs:element name="shopId" type="xs:int" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getLatLngResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:anyType" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>
